@@ -28,7 +28,9 @@ namespace Lynda_MVC_ATM.Controllers
 
             //return new HttpStatusCodeResult(403);
 
-            return Json(new { name="Leon", Age="18" }, JsonRequestBehavior.AllowGet);
+            return RedirectToAction("Contact");
+
+            //return Json(new { name="Leon", Age="18" }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Contact()

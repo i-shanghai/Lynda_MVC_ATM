@@ -10,22 +10,48 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Join Us.</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>
+            @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-default" })
+        </p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>More Info</h2>
+        <p></p>
+        <p>@Html.ActionLink("Login", "Login", "Account", new { id = 1 }, new { @class = "btn btn-default" }) </p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        My Email is leon@163.com. You can follow me on @@twitter.
+        @{
+            var amounts = new List<Decimal> { 23.23m, 123, -454, 34, -43 };
+            <ul>
+                @foreach (decimal item in amounts)
+                {
+                    <li>@formartAmount(item)</li>
+                }
+            </ul>
+        }
     </div>
 </div>
+
+@*直接定义方法*@
+@helper formartAmount(decimal amount)
+{
+var color = "green";
+if (amount < 0)
+{
+    color = "red";
+}
+    <span style="color:@color">@String.Format("{0:c}", amount)</span>
+}
+
+@section scripts {
+    <script> console.log('log in index')</script>
+}
