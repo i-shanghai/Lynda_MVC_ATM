@@ -7,8 +7,8 @@ namespace Lynda_MVC_ATM
     {
         // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+        { 
+             bundles.Add(new ScriptBundle("~/bundles/jquery", "https://cdn.bootcss.com/jquery/1.11.0/jquery.js").Include(
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -26,6 +26,9 @@ namespace Lynda_MVC_ATM
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            BundleTable.EnableOptimizations = true;
+            bundles.UseCdn = true;
         }
     }
 }

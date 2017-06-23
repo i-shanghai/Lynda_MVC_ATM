@@ -2,10 +2,18 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="row">
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon glyphicon-ok-sign "></span>Sign</a></div>
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon glyphicon-apple"></span>Apple</a></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon glyphicon-bookmark"></span>Bookmark</a></div>
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon glyphicon-chevron-right"></span>Right</a></div>
+</div>
+<div class="row">
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon  glyphicon-camera"></span>Camera</a></div>
+    <div class="col-md-6"><a href="#" class="btn btn-primary btn-block margin-top-20"><span class="glyphicon glyphicon-dashboard "></span>Dashboard</a></div>
 </div>
 
 <div class="row">
@@ -35,6 +43,8 @@
                 @foreach (decimal item in amounts)
                 {
                     <li>@formartAmount(item)</li>
+                    <text>plain text</text>
+                    @:plain text
                 }
             </ul>
         }
