@@ -65,6 +65,14 @@ namespace Lynda_MVC_ATM.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "名")]
+        public string FirstName { get; set; }
+
+        [Required] 
+        [Display(Name  = "姓")]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "电子邮件")]
         public string Email { get; set; }

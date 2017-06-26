@@ -29,5 +29,7 @@ namespace Lynda_MVC_ATM.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<CheckingAccount> checkingAccounts { get; set; }
     }
 }
