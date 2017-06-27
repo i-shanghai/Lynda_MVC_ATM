@@ -15,8 +15,8 @@ namespace Lynda_MVC_ATM.Models
 
         [Required]
         [Display(Name = "账号")]
-        [Column(TypeName="varchar")]
-        [StringLength(10,MinimumLength =6, ErrorMessage = "卡号为6-10个数字")]
+        [Column(TypeName = "varchar")]
+        [StringLength(10, MinimumLength = 6, ErrorMessage = "卡号为6-10个数字")]
         //[RegularExpression(@"\d{6,10}", ErrorMessage = "卡号为6-10个数字")]
         public string AccountNo { get; set; }
 
@@ -42,12 +42,15 @@ namespace Lynda_MVC_ATM.Models
             get; set;
         }
 
-        //和User对象建立关联
+        //ATM Account 和User对象建立关联
         public virtual ApplicationUser User { get; set; }
 
-        //当前用户ID
+        //当前网站登录用户ID
         [Required]
         public string AplicationUserID { get; set; }
+
+        //一张银行卡，对应多笔交易信息
+        public virtual ICollection<Transaction> Transactions { get; set; }
 
     }
 }

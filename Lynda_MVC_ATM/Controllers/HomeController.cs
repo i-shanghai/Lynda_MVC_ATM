@@ -22,13 +22,13 @@ namespace Lynda_MVC_ATM.Controllers
                 ViewBag.Message = "Thakns for your suggestion.";
             }
 
-            // return View();
+              return View();
 
             //return PartialView();
 
             //return new HttpStatusCodeResult(403);
 
-            return RedirectToAction("Contact");
+            //return RedirectToAction("Contact");
 
             //return Json(new { name="Leon", Age="18" }, JsonRequestBehavior.AllowGet);
         }

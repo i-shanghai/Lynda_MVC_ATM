@@ -30,6 +30,10 @@ namespace Lynda_MVC_ATM.Models
             return new ApplicationDbContext();
         }
 
+        //DBContext中，添加 CheckingAccount
         public DbSet<CheckingAccount> checkingAccounts { get; set; }
+
+        //DBContext中，添加 transactions
+        public DbSet<Transaction> transactions { get; set; }
     }
 }

@@ -6,23 +6,7 @@ namespace Lynda_MVC_ATM.Migrations
     public partial class InitialCreate : DbMigration
     {
         public override void Up()
-        {
-            CreateTable(
-                "dbo.CheckingAccounts",
-                c => new
-                    {
-                        id = c.Int(nullable: false, identity: true),
-                        AccountNo = c.String(nullable: false),
-                        FirstName = c.String(nullable: false),
-                        LastName = c.String(nullable: false),
-                        Balance = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        AplicationUserID = c.String(),
-                        User_Id = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
-                .Index(t => t.User_Id);
-            
+        { 
             CreateTable(
                 "dbo.AspNetUsers",
                 c => new
@@ -96,7 +80,7 @@ namespace Lynda_MVC_ATM.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.CheckingAccounts", "User_Id", "dbo.AspNetUsers");
+            //DropForeignKey("dbo.CheckingAccounts", "User_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
@@ -106,13 +90,13 @@ namespace Lynda_MVC_ATM.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.CheckingAccounts", new[] { "User_Id" });
+            // DropIndex("dbo.CheckingAccounts", new[] { "User_Id" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.CheckingAccounts");
+            //DropTable("dbo.CheckingAccounts");
         }
     }
 }

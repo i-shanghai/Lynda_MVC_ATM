@@ -155,6 +155,8 @@ namespace Lynda_MVC_ATM.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    //网站注册的时候，写入ATM Account信息
                     var db = new ApplicationDbContext();
 
                     var accountNumber = (123456 + db.checkingAccounts.Count() + 1).ToString().PadLeft(10, '0');
